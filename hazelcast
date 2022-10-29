@@ -10,9 +10,9 @@ pipeline {
   }
 
   environment {
-    VAULT_ADDR="https://test-hashivault.company.com"
-    VAULT_MBO_PATH="projects/test/program-env"
-    VAULT_APP_PATH="projects/test/program-env/springbootadmin"
+    VAULT_ADDR="http://20.118.176.12:8200"
+    VAULT_MBO_PATH="projects/hazelcast"
+    VAULT_APP_PATH="projects/hazelcast/version"
     VAULT_SKIP_VERIFY="true"
     ROLE_ID=credentials('36da886e-***-44a2-****-2ce25e0f303e')
     SECRET_ID=credentials('36da886e-***-44a2-****-2ce25e0f303e')
