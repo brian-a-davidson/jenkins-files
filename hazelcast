@@ -5,7 +5,7 @@ pipeline {
   agent {
     docker {
       reuseNode true
-      image 'bdsysmin/release-tools:latest'
+      image 'nonanom/release-tools:latest'
     }
   }
 
