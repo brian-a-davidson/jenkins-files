@@ -14,8 +14,8 @@ pipeline {
     VAULT_MBO_PATH="projects/hazelcast"
     VAULT_APP_PATH="projects/hazelcast/version"
     VAULT_SKIP_VERIFY="true"
-    ROLE_ID=credentials('36da886e-***-44a2-****-2ce25e0f303e')
-    SECRET_ID=credentials('36da886e-***-44a2-****-2ce25e0f303e')
+    ROLE_ID=credentials('vault-role-id')
+    SECRET_ID=credentials('vault-secret-id')
     APP_VERSION="${params.VERSION}"
     APP_NAME="springbootadmin"
     NAMESPACE="default"
