@@ -1,7 +1,13 @@
 #!/usr/bin/env groovy
 
 pipeline {
-  
+   
+  agent {
+    docker {
+      reuseNode true
+      image 'nonanom/release-tools:latest'
+    }
+  }
 
   environment {
     VAULT_ADDR="http://20.118.176.12:8200"
