@@ -33,7 +33,7 @@ pipeline {
         CLIENT_ID=$(vault kv get -field=azure_application_id ${VAULT_MBO_PATH}/azure)
         '''
       }
-	
+}	
 
   post {
     cleanup {
