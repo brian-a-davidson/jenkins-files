@@ -29,8 +29,6 @@ pipeline {
       steps {
         sh '''
         vault login $(vault write -format=json auth/approle/login role_id=${ROLE_ID} secret_id=${SECRET_ID} | jq -r .auth.client_token)
-
-        CLIENT_ID=$(vault kv get -field=azure_application_id ${VAULT_MBO_PATH}/azure)
         '''
       		}
 	}
