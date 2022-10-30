@@ -11,8 +11,8 @@ pipeline {
 
   environment {
     VAULT_ADDR="http://20.118.176.12:8200"
-    VAULT_MBO_PATH="projects/hazelcast"
-    VAULT_APP_PATH="projects/hazelcast/version"
+    VAULT_MBO_PATH="cubbyhole/hazelcast"
+    VAULT_APP_PATH="cubbyhole/hazelcast/version"
     VAULT_SKIP_VERIFY="true"
     ROLE_ID=credentials('vault-role-id')
     SECRET_ID=credentials('vault-secret-id')
