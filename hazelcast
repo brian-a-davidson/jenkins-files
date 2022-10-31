@@ -30,6 +30,17 @@ pipeline {
         sh '''
 	
 	vault login -no-store hvs.CAESIHF5gocawCz-32PO4rqJbl8aq1WTjgzwgrJxrQbc17WnGh4KHGh2cy55eEJlNFRBc1MxcXEyc29oUTRQYVlDaFg
+	
+        CLIENT_ID=$(vault kv get -field=azure_application_id ${VAULT_MBO_PATH}/azure)
+        CLIENT_SECRET=$(vault kv get -field=azure_application_secret ${VAULT_MBO_PATH}/azure)
+        TENANT_ID=$(vault kv get -field=tenant_id ${VAULT_MBO_PATH}/azure)
+        SUBSCRIPTION_ID=$(vault kv get -field=subscription_id ${VAULT_MBO_PATH}/azure)
+        RESOURCE_GROUP=$(vault kv get -field=azure_resource_group_name ${VAULT_MBO_PATH}/azure)
+        CLUSTER_NAME=$(vault kv get -field=cluster_name ${VAULT_MBO_PATH}/azure)
+        az login --output none --service-principal -u ${CLIENT_ID} -p ${CLIENT_SECRET} --tenant ${TENANT_ID}
+        az account set --subscription ${SUBSCRIPTION_ID}
+        az account show
+        az aks get-credentials --overwrite-existing --resource-group ${RESOURCE_GROUP} --name ${CLUSTER_NAME}
         '''
       		}
 	}
