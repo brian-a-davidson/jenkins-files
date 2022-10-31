@@ -10,12 +10,12 @@ pipeline {
   }
 
   environment {
-    VAULT_ADDR="http://20.118.176.12:8200"
+    VAULT_ADDR="https://20.14.84.68:8200"
     VAULT_MBO_PATH="projects/hazelcast"
     VAULT_APP_PATH="projects/hazelcast/version"
     VAULT_SKIP_VERIFY="true"
-    ROLE_ID=credentials('vault-role-id')
-    SECRET_ID=credentials('vault-secret-id')
+    ROLE_ID=credentials('vault2-role-id')
+    SECRET_ID=credentials('vault2-secret-id')
     APP_VERSION="${params.VERSION}"
     APP_NAME="springbootadmin"
     NAMESPACE="default"
