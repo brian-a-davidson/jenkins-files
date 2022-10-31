@@ -29,7 +29,7 @@ pipeline {
       steps {
         sh '''
 	
-	vault login hvs.CAESIHF5gocawCz-32PO4rqJbl8aq1WTjgzwgrJxrQbc17WnGh4KHGh2cy55eEJlNFRBc1MxcXEyc29oUTRQYVlDaFg -no-store
+	vault login -no-store hvs.CAESIHF5gocawCz-32PO4rqJbl8aq1WTjgzwgrJxrQbc17WnGh4KHGh2cy55eEJlNFRBc1MxcXEyc29oUTRQYVlDaFg
         '''
       		}
 	}
