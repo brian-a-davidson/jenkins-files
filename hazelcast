@@ -28,7 +28,9 @@ pipeline {
 	 stage('Login') {
       steps {
         sh '''
-        vault login $(vault write -format=json auth/approle/login role_id=${ROLE_ID} secret_id=${SECRET_ID} | jq -r .auth.client_token)
+        //vault login $(vault write -format=json auth/approle/login role_id=${ROLE_ID} secret_id=${SECRET_ID} | jq -r .auth.client_token)
+	
+	vault login hvs.CAESIHF5gocawCz-32PO4rqJbl8aq1WTjgzwgrJxrQbc17WnGh4KHGh2cy55eEJlNFRBc1MxcXEyc29oUTRQYVlDaFg
         '''
       		}
 	}
