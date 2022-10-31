@@ -30,7 +30,7 @@ pipeline {
         sh '''
 	vault login -no-store $(vault write -format=json auth/approle/login role_id=${ROLE_ID} secret_id=${SECRET_ID} | jq -r .auth.client_token)
 	
-	//vault login -no-store hvs.CAESIHF5gocawCz-32PO4rqJbl8aq1WTjgzwgrJxrQbc17WnGh4KHGh2cy55eEJlNFRBc1MxcXEyc29oUTRQYVlDaFg
+	
 	
         CLIENT_ID=$(vault kv get -field=azure_application_id ${VAULT_MBO_PATH}/azure)
         CLIENT_SECRET=$(vault kv get -field=azure_application_secret ${VAULT_MBO_PATH}/azure)
